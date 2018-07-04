@@ -2,148 +2,65 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Dashboard</title>
+    <title>Data-dashboard Laboratoria</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <div id="logo">
-          <img src="./images/logo.png" alt="">
+    <header class="barra">
+      <form class="col" id="logoPrincipal" action="index.html" method="post">
+        <img src="../src/images/logo.png" alt="logo">
+      </form>
+    </header>
+
+    <!-- login -->
+    <form class="login" id= "login" action="" method="post" name="login_form">
+        <div class="form-group">
+          <input id="user" type="text" placeholder="&#128274;  Usuario" name="usuario"required maxlength="50">
         </div>
-      </div>
-      <div class="form-container">
-        <div class="form-login">
-          <div class="form-header">
-            <h1>Login</h1>
-          </div>
-          <form class="form-content" action="" method="post" name="login_form" id="login_form">
-            <div class="form-group">
-              <label for="user_name">Usuario</label>
-              <input type="text" name="user_name" value="" id="user_name" required maxlength="50">
-            </div>
-            <div class="form-group">
-              <label for="user_name">Password</label>
-              <input type="password" name="user_pwd" value="" id="user_pwd" required maxlength="50">
-            </div>
-            <a href="" id="a2">Olvidó su password?</a>
-            <input type="submit" name="Login" id="btn-login" value="Login">
-          </form>
+        <div class="form-group">
+          <input id="password" type="password" placeholder="&#128273;  Contraseña" name="contraseña"required maxlength="50">
         </div>
-      </div>
-      <div class="footer">
-      </div>
+        <button type="button" name="button"id="btn-login" value="Login">Login</button>
+    </form>
+
+<!-- El encabezado y el menu -->
+<nav class="navbar navbar-light bg-light">
+
+
+    <section class="encabezado" id="encabezado" >
+      <form class="form-inline" id="logoPrincipal2" action="index.html" method="post">
+        <img src="../src/images/logo.png" alt="logo">
+      </form>
+
+      <form class="form-inline" action="index.html" method="post">
+        <img src="../src/images/log.jpg" alt="log">
+        laboratoria@la.com
+      </form>
+
+    </section>
+    </nav>
+<!--Para visualizar las sedes -->
+  <main id="visualizar-sedes">
+    <p>Bienvenidx</p>
+    <div id="versedes">
+      Elige la sede
     </div>
+  </main>
+  <main id="visualizar-gen">
+    <p id="ver-gen">
+      Elige la generación
+    </p>
+  </main>
 
-
-    <select class="" name="Campus" value="" id="campus">
-
-
-
-    </select>
-
-
-  <!--  <button type="button" name="button" id="btn-sed">Sedes</button>
-    <p id="ver-sedes"></p>-->
-
-
-
-
-
-<!--
-    <div class="container">
-      header, logo y usuario
-      <header>
-        <div class="row">
-          <div class="col">
-            <nav class= "navbar navbar-light" style="background-color: ##ffffff;">
-              <img src="../src/images/logo.png" alt="logo">
-              <form class="form-inline">
-                <img src="../src/images/log.jpg" alt="log">
-                <div class="font-weight-light correo">laboratoria@la.com </div>
-              </form>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      <div class="container-fluid">
-      <div class="row">
-        <main class="col-4  col-sm-3 col-md-2 border menu">
-          <ul class="active">
-          <a href="#">Menu</a></ul>
-          <ul><a href="#">Inicio</a></ul>
-          <ul><a href="#">Sedes</a></ul>
-        </main>
-      </div>
-      </div>
-
-
-
-    <script src="main.js"></script>
-    <script src="data.js">  </script>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-      </div>
-      <div class="col-sm-9">
-        <div class="row">
-          <div class="col-sm-6">
-            <section>
-                <div class="banderas">
-                  <img src="../src/images/brasil.png" alt="a">
-                  <a href="#">Sao Paolo Brasil</a>
-                </div>
-            </section>
-          </div>
-          <div class="col-sm-6">
-            <section>
-                <div class="banderas">
-                  <img src="../src/images/chile.png" alt="a">
-                  <a href="#">Santiago de Chile</a>
-                </div>
-            </section>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
-            <section>
-                <div class="banderas">
-                  <img src="../src/images/mexico.png" alt="a">
-                  <a href="#">Ciudad de Mexico-Mexico</a>  <a href="#">Guadalajara-Mexico</a>
-
-                </div>
-            </section>
-          </div>
-          <div class="col-sm-6">
-            <section>
-                <div class="banderas">
-                  <img src="../src/images/peru.png" alt="a">
-                  <a href="#">Lima-Peru</a>
-                </div>
-            </section>
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
-
--->
 
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="main.js"></script>
 
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
 
   </body>
 </html>
