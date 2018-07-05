@@ -4,75 +4,58 @@ const json = "https://raw.githubusercontent.com/RaquelGlez/cdmx-2018-06-bc-core-
 // o jalarlo mediante el servidor
 //const json = '../data/laboratoria.json';
 
-const getData = () => {
+window.onload = () => {
   fetch(json)
   .then(response => response.json())
   .then((res) => {
     //console.log(res)
-    drawCampus(res);  //activar para crear botones con sedes
-    //drawGen(res);
+    drawCampus(res);
     //window.computeGenerationsStats(res);  // linea necesaria para ejecutar función y poder ver en consola
-
+    //window.computeStudentsStats(res);
   })
   .catch((error) =>{
     console.log('Error');
   });
-}
-getData();
-
-//
-// //Creando botones para visualizar las sedes dentro de  con botones de opciones de sedes, ¿como separar los botones?
-
-const drawCampus = (laboratoria) => {
-
-  const sedes = Object.keys(laboratoria);
-  console.log(sedes);
-  const verSedes = document.getElementById('ver-sedes');
-  sedes.forEach((sede) =>{
-    const option = document.createElement('button');
-    option.innerHTML = sede;
-    //option.addEventListener("click", gen)
-    verSedes.appendChild(option);
-    option.addEventListener("click", () => drawGen(laboratoria))
-    //option.addEventListener("click", () => gen(laboratoria))
-  });
 };
 
-const drawGen = (laboratoria) => {
-  //console.log(laboratoria[event.target.innerHTML].generacion);
-  //console.log(event.target.innerHTML);
-  //if(event.target.innerHTML == )
 
+window.computeStudentsStats = () => {
+  // const studentsArray = [];
+  // const obj = {
+  //     name: '',
+  //     email: '',
+  //     campus: '',
+  //     generation: ''
+      // stats = {
+      //   status: '',
+      //   completedPercentaje: '',
+      //   percentajeDuration: '',
+      // }
+  //};
 
+  for (key in laboratoria) {
 
-  for( i in laboratoria[event.target.innerHTML].generacion){
-    //console.log(i);
-    let generaciones = i;
-    
-
-    const viewGen = document.getElementById('ver-gen');
-    const option = document.createElement('button');
-    option.innerHTML = generaciones;
-    viewGen.appendChild(option);
-    // console.log(generaciones);
-
-  };
+    //guardar las keys en una variable
+    //let generations = Object.keys(laboratoria[key].generacion);
+    console.log(key);
+    console.log(laboratoria[key]);
+    console.log(Object.keys(laboratoria[key].generacion))
+};
 };
 
 
 
+//Trabajar con la funcion global, para obtener el objeto solicitado
 
-
-//Ahora trabajamos con la funcion global, para obtener el objeto solicitado
 /*
  window.computeGenerationsStats = (laboratoria) => {
     const generationsArray = [];
-    // const obj = {
-    //     campus: '',
-    //     generation: '',
-    //     average: '',
-    //     count: ''
-    // };
+    const obj = {
+        campus: '',
+        generation: '',
+        average: '',
+        count: ''
+    };
 
 
      for (key in laboratoria) {
@@ -101,74 +84,17 @@ const drawGen = (laboratoria) => {
      }
      console.log(generationsArray);
      return generationsArray;
-  };*/
-//
-//       for (key in laboratoria){
-//         obj.campus = key;
-//         console.log(key);
-//          let generations = Object.keys(laboratoria[key].generacion);
-//        //  console.log(Object.keys(laboratoria[key].generacion));
-//          obj.generation = generation;
-//        //      console.log(generations);
-//          generations.forEach((generation) => {
-//            obj.generation = generation;
-//        //    console.log(generation);
-//             generationsArray.push(obj);
-//            console.log(generationsArray);
-//        // })
-//   };
-// };
-
-
- //return generationsArray;
-//};
-
-
-
-//visualizar sedes mediante un select
-/*const drawCampus = (laboratoria) => {
-  const sedes = Object.keys(laboratoria);
-  console.log(sedes);
-  const containerCampus = document.getElementById('campus');
-  sedes.forEach((sede) =>{
-    const option = document.createElement('option');
-    option.innerHTML = sede;
-    containerCampus.appendChild(option);
-  });
-  //containerCampus.addEventListener('change',iteratorGenerations);
-};*/
-
-
-
-
-/*
-
-window.computeGenerationsStats = (laboratoria) => {
-  const generationsArray = [];
-  const obj = {
-    campus: '',
-    generation: '',
-    average: 0,
-    count: 0,
   };
-  let average = 0;
-  for (key in laboratoria){
-    obj
-  }
-};
-
-window.computeStudentsStats = () => {
-
-};
-
-
-window.sortStudents = () => {
-
-};
-
-
-window.filterStudents = () => {
-
-};
 
 */
+
+
+//
+// window.sortStudents = () => {
+//
+// };
+//
+//
+// window.filterStudents = () => {
+//
+// };

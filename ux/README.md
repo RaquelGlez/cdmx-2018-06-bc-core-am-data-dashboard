@@ -78,7 +78,7 @@ Considerando a las training managers de Laboratoria como arquetipos de usuarios,
 ### **4. Prototipado**
 Se han generado los sketches de esta propuesta y se presentan a continuación:
 
-Sketch: ![sketch]<(https://github.com/RaquelGlez/cdmx-2018-06-bc-core-am-data-dashboard/blob/master/ux/Imagenes/sketch.png)
+Sketch: ![sketch](https://github.com/RaquelGlez/cdmx-2018-06-bc-core-am-data-dashboard/blob/master/ux/Imagenes/sketch.png)
 
 Como parte del sketch se ha realizado un diagrama de interacción.
 

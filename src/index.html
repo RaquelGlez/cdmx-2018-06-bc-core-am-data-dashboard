@@ -9,58 +9,57 @@
 
   </head>
   <body>
-    <header>
 
-    </header>
-<!--
-    <form id="login">
-      <p>Usuario:    <input type="text" name="usuario" id="usuario"></p>
-      <p>Contraseña: <input type="password" name=password id="password"></p>
-      <input onclick=enviarLogin() type=button value=Acceder id="enviar">
-    </form >
--->
-
-<!-- El encabezado y el menu -->
-    <section class="encabezado">
-      <form class="col" action="index.html" method="post">
+    <header class="barra">
+      <form class="col" id="logoPrincipal" action="index.html" method="post">
         <img src="../src/images/logo.png" alt="logo">
       </form>
-      <form class="col" action="index.html" method="post">
-        <img src="../src/images/log.jpg" alt="log">
-        laboratoria@la.com
+    </header>
+
+    <!-- login -->
+    <form class="login" id= "login" action="" method="post" name="login_form">
+        <div class="form-group">
+          <input id="user" type="text" placeholder="&#128274;  Usuario" name="usuario"required maxlength="50">
+        </div>
+        <div class="form-group">
+          <input id="password" type="password" placeholder="&#128273;  Contraseña" name="contraseña"required maxlength="50">
+        </div>
+        <button type="button" name="button"id="btn-login">Login</button>
+    </form>
+
+    <!-- El encabezado y el menu -->
+    <section class="encabezado" id="encabezado" >
+      <form class="form-inline" id="logoPrincipal2" action="index.html" method="post">
+        <img src="../src/images/logo.png" alt="logo">
       </form>
-
-
     </section>
-    <div class="encabezado">
 
-      <form class="form-inline">
+    <form class="form-inline" id="log" action="index.html" method="post">
+      <img src="../src/images/log.jpg" alt="log">
+        laboratoria@la.com
+    </form>
 
-      </form>
-    </div>
+      <!--Para visualizar las sedes -->
+    <main id="sedes-gen">
+      <p id="welcome">Bienvenidx</p>
+      <p id="visualizar-sedes">Elige la sede</p>
+      <div class="row" id="ver-sedes"></div>
+      <p id="visualizar-gen">Elige la generación</p>
+      <div class="row" id="ver-gen"></div>
+    </main>
 
-
-<!--Para visualizar las sedes -->
-  <main id="visualizar-sedes">
-    <p id="ver-sedes">
-      Elige la sede
-    </p>
-  </main>
-  <main id="visualizar-gen">
-    <p id="ver-gen">
-      Elige la generación
-    </p>
-  </main>
-
-
-
-
-
+    <!--Para visualizar a las estudiantes por generación -->
+    <main id="visualizar-data">
+      <section class="row 1">  <!-- Para mostrar a las estudiantes-->
+        <p>Las estudiantes de la generación son:</p>
+        <div class="row" id="ver-est"></div>
+      </section>
+    </main>
 
 
 
 
-
+    <!-- Sección de scripts-->
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="main.js"></script>
 
