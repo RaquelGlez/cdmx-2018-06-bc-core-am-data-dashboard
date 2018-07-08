@@ -53,27 +53,29 @@ const drawCampus = (laboratoria) => {
   sedes.forEach((sede) =>{
     const optionSede = document.createElement('button');
     optionSede.innerHTML = sede;
+
     verSedes.appendChild(optionSede);
     //Hacemos referencia a un evento para después visualizar las sedes
 
-    optionSede.addEventListener("click", () => drawGen(laboratoria))
+    optionSede.addEventListener("click", () => drawGen(laboratoria, event.target.innerHTML))
     //option.addEventListener("click", () => gen(laboratoria))
   });
 };
   //Función para visualizar las sedes
   //Creando botones para visualizar las sedes
 
-const drawGen = (laboratoria) => {
+const drawGen = (laboratoria, campus) => {
   //console.log(laboratoria[event.target.innerHTML].generacion); // muestra objetos con objetos de array
   //console.log(event.target.innerHTML);
   //if(event.target.innerHTML == )
 
-  const viewGen = document.getElementById('ver-gen');
-  if(viewGen.hasChildNodes()){
-    let limpiar = viewGen.removeChild();
-  } else {
+   const viewGen = document.getElementById('ver-gen');
+   viewGen.innerHTML = "";
+  // if(viewGen.hasChildNodes()){
+  //   let limpiar = viewGen.removeChild();
+  // } else {
     for( i in laboratoria[event.target.innerHTML].generacion){
-      console.log(laboratoria[event.target.innerHTML].generacion);
+      //console.log(laboratoria[event.target.innerHTML].generacion);
       //console.log(i);
       let generaciones = i;
       //const viewGen = document.getElementById('ver-gen');
@@ -81,21 +83,34 @@ const drawGen = (laboratoria) => {
       optionGen.innerHTML = generaciones;
       viewGen.appendChild(optionGen);
       // console.log(generaciones);
-      //optionGen.addEventListener("click", () => drawEst(laboratoria))
+      optionGen.addEventListener("click", () => drawEst(laboratoria, campus))
     };
-  };
-  //viewGen.parentNode.removeChild(viewGen)
+  // };
   return;
 };
 
 
 
+ const drawEst = (laboratoria, sede) => {
+  //console.log(laboratoria[event.target.innerHTML].generacion)
+  // console.log(event.target.innerHTML);
+   console.log(laboratoria, sede);
+  const arrayStudent = computeStudentsStats(laboratoria)
+   console.log(event.target.innerHTML);
+  const newArrayStudent = arrayStudent.filter((item) => {
+    // console.log(item.campus == sede && event.target.innerHTML == item.generation);
+    return item.campus == sede && event.target.innerHTML == item.generation;
+  })
+  console.log(newArrayStudent);
+  // console.log(arrayStudent[sede].generacion[event.target.innerHTML][i]);
+  // - ubicar elemento donde quiero imprimir los datos
+  // - hacer referencia al lugar de donde se van a obtener los datos: arreglo, objeto
+  // - obtener el dato especifico a imprimir, por ejemplo, mediante una iteracion
+  // - llevar a cabo la impresion de los datos de interes
 
-//
- //const drawEst = (laboratoria) => {
-//   console.log(laboratoria[event.target.innerHTML].generacion.estudiantes)
-//   const viewEst = document.getElementById('ver-est')
+  const viewEst = document.getElementById('ver-est')
 
-//
-//
-// }
+
+
+
+};

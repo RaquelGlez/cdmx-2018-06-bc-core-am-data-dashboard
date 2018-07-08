@@ -1,17 +1,17 @@
 
 //Guardamos la ubicación del JSON en una variable
-const json = "https://raw.githubusercontent.com/RaquelGlez/cdmx-2018-06-bc-core-am-data-dashboard/master/data/laboratoria.json"
+const json = 'https://raw.githubusercontent.com/RaquelGlez/cdmx-2018-06-bc-core-am-data-dashboard/master/data/laboratoria.json'
 // o jalarlo mediante el servidor
 //const json = '../data/laboratoria.json';
 
 window.onload = () => {
   fetch(json)
   .then(response => response.json())
-  .then((res) => {
-    //console.log(res)
-    drawCampus(res);
-    //window.computeGenerationsStats(res);  // linea necesaria para ejecutar función y poder ver en consola
-    //window.computeStudentsStats(res);
+  .then((laboratoria) => {
+    //console.log(laboratoria)
+    // window.computeGenerationsStats(laboratoria);  // linea necesaria para ejecutar función y poder ver en consola
+    drawCampus(laboratoria);
+    window.computeStudentsStats(laboratoria);
   })
   .catch((error) =>{
     console.log('Error');
@@ -19,29 +19,53 @@ window.onload = () => {
 };
 
 
-window.computeStudentsStats = () => {
-  // const studentsArray = [];
-  // const obj = {
-  //     name: '',
-  //     email: '',
-  //     campus: '',
-  //     generation: ''
-      // stats = {
-      //   status: '',
-      //   completedPercentaje: '',
-      //   percentajeDuration: '',
-      // }
-  //};
+window.computeStudentsStats = (laboratoria) => {
+  // console.log(laboratoria)
+  const studentsArray = [];
+  let sede = '';
+  let generacion = '';
+  let studentName = '';
+  let studentMail = '';
 
   for (key in laboratoria) {
+    //console.log(key);    //muestra un string con el nombre de cada sede
+    sede = key;            //Muestra cada sede
+    //console.log(laboratoria[key]);   // muestra un objeto de objetos con las generaciones
+    //console.log(Object.values(laboratoria[key].generacion));  // es un arreglo de objetos, tiene a las estudiantes dentro, es el arreglo a iterar en sus keys
+    let generations = Object.keys(laboratoria[key].generacion);
+    generations.forEach((generation1) => {
+      generacion = generation1;  //asigna las 9 generaciones en string
+        //console.log(generacion);
+      //Ahora iteramos para entrar a alumnas
+      //Declaramos el arreglo a iterar  //
+        //console.log(laboratoria[sede].generacion[generation1])
+        //console.log(laboratoria[sede].generacion[generation1].estudiantes);  //regresa un arreglo con un objeto por estudiante
+      let students = laboratoria[sede].generacion[generation1].estudiantes;   //es el arreglo a iterar para obtener nombres y correos
+      for (student in students){
+        //console.log(students[student]); //son los arreglos por estudiante
+        //console.log(students[student].nombre) //son los nombres de cada estudiante, en string
+        studentName = students[student].nombre;
+        studentMail = students[student].correo;
 
-    //guardar las keys en una variable
-    //let generations = Object.keys(laboratoria[key].generacion);
-    console.log(key);
-    console.log(laboratoria[key]);
-    console.log(Object.keys(laboratoria[key].generacion))
+
+        studentsArray.push({
+          'name': studentName,
+          'email': studentMail,
+          'campus': sede,
+          'generation': generacion
+
+        })
+
+      }
+  });
+
+  };
+  // console.log(studentsArray);
+  return studentsArray;
+
 };
-};
+
+
 
 
 
@@ -87,6 +111,7 @@ window.computeStudentsStats = () => {
   };
 
 */
+
 
 
 //
