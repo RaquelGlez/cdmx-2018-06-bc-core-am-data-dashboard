@@ -8,14 +8,15 @@
   let encabezados =document.getElementById("encabezado");
   let sege= document.getElementById("sedes-gen");
   let logo = document.getElementById("log");
-  let verData = document.getElementById('visualizar-data');
+  let geEst = document.getElementById("gen-est");
+  //let verData = document.getElementById('visualizar-data');
 
 
 
   encabezados.style.display = "none";
   sege.style.display = "none";
   logo.style.display = "none";
-  verData.style.display = "none";
+  geEst.style.display = "none";
 
 
 
@@ -24,15 +25,12 @@ ingresar.addEventListener("click", datosUsuario = ()=> {
     let usuario = us.value;
     let password2 = password1.value;
         if ((usuario =="")||(password2 =="")) {
-
           login.style.display="none";
           logoPrincipal.style.display="none";
           sege.style.display= "block";
           encabezados.style.display = "block";
-          sege.style.display = "block";
           logo.style.display = "block";
-
-
+          geEst.style.display = "none";
     }else{
         alert("Datos Incorrectos");
 }
@@ -83,34 +81,52 @@ const drawGen = (laboratoria, campus) => {
       optionGen.innerHTML = generaciones;
       viewGen.appendChild(optionGen);
       // console.log(generaciones);
+      sege.style.display = "none";
+      logo.style.display = "block";
+      geEst.style.display = "block";
+
       optionGen.addEventListener("click", () => drawEst(laboratoria, campus))
     };
+
   // };
   return;
 };
 
 
-
  const drawEst = (laboratoria, sede) => {
-  //console.log(laboratoria[event.target.innerHTML].generacion)
+  // console.log(laboratoria[event.target.innerHTML].generacion)
   // console.log(event.target.innerHTML);
-   console.log(laboratoria, sede);
+   // console.log(laboratoria, sede);
   const arrayStudent = computeStudentsStats(laboratoria)
-   console.log(event.target.innerHTML);
+   // console.log(event.target.innerHTML);
   const newArrayStudent = arrayStudent.filter((item) => {
     // console.log(item.campus == sede && event.target.innerHTML == item.generation);
-    return item.campus == sede && event.target.innerHTML == item.generation;
-  })
-  console.log(newArrayStudent);
+    return item.campus === sede && event.target.innerHTML === item.generation;
+  });
+  //console.log(newArrayStudent);
   // console.log(arrayStudent[sede].generacion[event.target.innerHTML][i]);
-  // - ubicar elemento donde quiero imprimir los datos
-  // - hacer referencia al lugar de donde se van a obtener los datos: arreglo, objeto
-  // - obtener el dato especifico a imprimir, por ejemplo, mediante una iteracion
-  // - llevar a cabo la impresion de los datos de interes
+  let datos = document.getElementById("container");
+  let result = '';
+  for (let i = 0; i < newArrayStudent.length; i++){
+    console.log(newArrayStudent[i].name);
+    result += `
+      <section id="table-est">
 
-  const viewEst = document.getElementById('ver-est')
+           <div class="container">
+             <table class="table"  id="pintar">
+                 <tbody>
+                 <td> ${newArrayStudent[i].name}</td>
+                  <td> ${newArrayStudent[i].email}</td>
+                 </tbody>
+               </table>
 
 
 
+         </div>
+       </section>`
+
+
+  }
+datos.innerHTML = result;
 
 };
