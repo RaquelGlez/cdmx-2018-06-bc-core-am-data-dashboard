@@ -1,45 +1,53 @@
-.menu{
-  background-color:#FFE032;
-}
-.encabezado {
-  background-color: #ffffff;
-  float: left;
-}
-.form-inline{
-  float:right;
-  padding: 10px;
-}
-.col {
-  padding-top: 8px;
-     padding-bottom: 8px;
-     text-align: center;
-     margin-top: 0px;
-     margin-bottom: 0px;
-}
-.login{
-     vertical-align: auto;
-     margin: auto;
-     width: 50%;
-     max-width: 400px;
-     padding: 40px 60px;
-     margin: 30px;
-     margin-left: 350px;
-     background-color: white;
-}
-#welcome{
-  font-size: 60px;
+
+#barra {
   text-align: center;
   padding-top: 100px;
+  float: center;
+  width: 50%;
+}
+
+#login{
+     text-align: center;
+     /*margin: 120px;
+     width: 50%;
+     max-width: 400px;*/
+     padding: 60px 50px;
+     float: center;
+     display: block;
+     /*margin: 30px;
+     margin-left: 350px;
+     background-color: white;*/
+}
+.form-group {
+  text-align: center;
+}
+
+#encabezado {
+  background-color: #ffffff;
+  float: left;
+  font-family: 'Bitter', serif;
+}
+
+#welcome{
+  font-size: 50px;
+  text-align: center;
+  padding-top: 100px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #visualizar-sedes {
-  background-color: #FF009E;
-  font-size: 40px;
+  background-color: #333;
+  font-size: 25px;
   text-align: center;
   margin-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
 
 }
 
+#ver-sedes {
+  padding: 20px;
+}
 #ver-sedes button{
   background: #FFE521;
   padding: 10px;
@@ -48,31 +56,96 @@
   text-align: center;
   width: 10%;
   display: inline-flex;
+  font-family: 'Bitter', serif;
+  font-weight: bold;
+}
+
+#gen-est {
+  padding: 60px;
+  margin-top: 50px;
 }
 
 #visualizar-gen {
-  background-color: #FF009E;
-  font-size: 40px;
+  background-color: #333;
+  font-size: 25px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
 }
 
-#ver-gen button{
-  background: black;
-  color: white;
+/*#ver-gen {
   padding: 10px;
-  border-color: black;
+}*/
+
+#ver-gen button{
+  /*background: black;
+  color: white;*/
+  padding: 10px;
+  border-color: #FF009E;
   margin-left: 200px;
+  margin-top: 20px;
   text-align: center;
   width: 10%;
   display: inline-flex;
+  background:#FF009E;
+  color: #333;
+  font-family: 'Bitter', serif;
+  font-weight: bold;
 }
 
-/*#ver-gen button:hover {
-  background: #e0e0d1;
-}*/
+#topicos {
+  font-family: 'Bitter', serif;
+  font-size: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: block;
 
-#ver-gen button:{
-  background:#333;
+}
+
+#topico-gen {
+  background-color: #333;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 30px;
   color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+}
+
+.topic {
+  padding-left: 300px;
+}
+
+#table-est {
+  font-family: 'Bitter', serif;
+  font-style: italic;
+
+}
+
+#table-est tr {
+  text-align: center;
+}
+
+#table-est td {
+  text-align: center;
+}
+
+
+
+
+.menu{
+  background-color:#FFE032;
+}
+
+.form-inline{
+  float:right;
+  padding: 10px;
+}
+.col {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }

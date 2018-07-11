@@ -6,18 +6,22 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans" rel="stylesheet">
 
   </head>
   <body>
 
-    <header class="barra">
-      <form class="col" id="logoPrincipal" action="index.html" method="post">
-        <img src="../src/images/logo.png" alt="logo">
-      </form>
+    <header class="container" id="barra">
+      <div class="row">
+        <form class="col-xs-12 col-sm-8 col-md-7 col-lg-6" id="logoPrincipal" action="index.html" method="post">
+          <img src="../src/images/logo.png" alt="logo">
+        </form>
+      </div>
     </header>
 
     <!-- login -->
-    <form class="login" id= "login" action="" method="post" name="login_form">
+    <section class="container" id="login">
+      <form class="col1 col-xs-12 col-sm-8 col-md-7 col-lg-6" id= "login1" action="" method="post" name="login_form">
         <div class="form-group">
           <input id="user" type="text" placeholder="&#128274;  Usuario" name="usuario"required maxlength="50">
         </div>
@@ -25,52 +29,75 @@
           <input id="password" type="password" placeholder="&#128273;  Contraseña" name="contraseña"required maxlength="50">
         </div>
         <button type="button" name="button"id="btn-login">Login</button>
-    </form>
-
-    <!-- El encabezado y el menu -->
-    <section class="encabezado" id="encabezado" >
-      <form class="form-inline" id="logoPrincipal2" action="index.html" method="post">
-        <img src="../src/images/logo.png" alt="logo">
       </form>
+    <!--  <form class="col2 col-xs-12 col-sm-4 col-md-3 col-lg-6" id="img-entrada"action="index.html" method="post">
+        <img src="../src/images/lab2.jpg" alt="logo">
+      </form>-->
     </section>
 
-    <form class="form-inline" id="log" action="index.html" method="post">
-      <img src="../src/images/log.jpg" alt="log">
-        laboratoria@la.com
 
-    </form>
+
+    <!-- El encabezado y el menu -->
+    <div class="contanier">
+      <section class="encabezado" id="encabezado" >
+        <form class="form-inline" id="logoPrincipal2" action="index.html" method="post">
+          <img src="../src/images/logo.png" alt="logo">
+        </form>
+      </section>
+      <form class="form-inline" id="log" action="index.html" method="post">
+        <img src="../src/images/log.jpg" alt="log">
+          laboratoria@la.com
+      </form>
+    </div>
+
 
       <!--Para visualizar las sedes -->
-    <main id="sedes-gen">
-      <p id="welcome">Bienvenidx</p>
+
+    <main class="container" id="sedes-gen">
+      <p id="welcome">Bienvenid@</p>
       <p id="visualizar-sedes">Elige la sede</p>
-      <div class="row" id="ver-sedes"></div>
-    </main>
-    <main id="gen-est">
-      <p id="visualizar-gen">Elige la generación</p>
-      <div class="row" id="ver-gen"></div>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12" id="ver-sedes"></div>
     </main>
 
+    <main class="conteiner" id="gen-est">
+      <p id="visualizar-gen">Elige la generación</p>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12" id="ver-gen"></div>
+    </main>
+
+
+    <div class="container" id="topicos">
+      <section class="main row">
+        <article class="col-xs-12 col-sm-8 col-md-9 col-lg-12">
+          <p id="topico-gen">Los tópicos de la generación son:</p>
+          <p class="topic" id="topico-cero"></p>
+          <p class="topic" id="topico-uno"></p>
+          <p class="topic" id="topico-dos"></p>
+          <p class="topic" id="topico-tres"></p>
+          <p class="topic" id="topico-cuatro"></p>
+        </article>
+      </section>
+    </div>
+
 <!--tabla para vizualizar lista de alumnas-->
+
     <section id="table-est">
-       <table class="table table-striped" id="pintar">
+       <table class="table table" id="pintar">
          <div class="row">
-               <div class="container">
+
                  <div class="col-md-3"></div>
                  <div class="col-md-6">
                      <thead>
                        <tr>
-                         <th scope="col">#</th>
                          <th scope="col">Nombre</th>
                          <th scope="col">Correo</th>
-                         <th scope="col">Progreso</th>
+                         <th scope="col">% completitud</th>
                        </tr>
                      </thead>
                    </table>
                    </div>
                  <div class="col-md-3">
                  </div>
-               </div>
+
              </div>
              </section>
        <div id="container"></div>

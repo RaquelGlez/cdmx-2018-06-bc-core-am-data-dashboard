@@ -41,7 +41,6 @@ window.computeStudentsStats = (laboratoria) => {
   let percentageDuration3 = 0;
 
 
-
   for (key in laboratoria) {
     // console.log(key);    //muestra un string con el nombre de cada sede
     sede = key; // Muestra cada sede
@@ -66,7 +65,7 @@ window.computeStudentsStats = (laboratoria) => {
         // console.log(students[student].progreso.porcentajeCompletado);
         completedPercentageStatus = students[student].progreso.porcentajeCompletado;
         if (completedPercentageStatus < 60) {
-          let status1 = 'Por debajo de 60 %';
+          let status1 = 'Por debajo de 60%';
           // console.log(status1);
           status = status1;
         } else if (completedPercentageStatus >= 90) {
@@ -79,9 +78,8 @@ window.computeStudentsStats = (laboratoria) => {
         }
         // Ahora integramos el siguiente objeto: topics
         // Indicamos la ruta para obtener la data
-         console.log(students[student].progreso.temas['01-Introduccion-a-programacion']);
+        // console.log(students[student].progreso.temas['01-Introduccion-a-programacion']);
         // console.log(Object.keys(students[student].progreso.temas));
-
 
 
         let temas1 = Object.keys(students[student].progreso.temas);
@@ -109,88 +107,73 @@ window.computeStudentsStats = (laboratoria) => {
             'status': status,
             'completedPercentage': completedPercentageStatus,
             'topics': {
-              '1':{
+              '1': {
                 'tema': tema1,
-                'completedPercentage':completedPercentaget1,
-                'percentageDuration':percentageDuration1
+                'completedPercentage': completedPercentaget1,
+                'percentageDuration': percentageDuration1
               },
-              '2':{
+              '2': {
                 'tema': tema2,
-                'completedPercentage':completedPercentaget2,
-                'percentageDuration':percentageDuration2
+                'completedPercentage': completedPercentaget2,
+                'percentageDuration': percentageDuration2
               },
-              '3':{
+              '3': {
                 'tema': tema3,
-                'completedPercentage':completedPercentaget3,
-                'percentageDuration':percentageDuration3
-              }
+                'completedPercentage': completedPercentaget3,
+                'percentageDuration': percentageDuration3
               }
             }
-
-
+          }
         });
       }
-  });
-
+    });
   };
-   console.log(studentsArray);
+  console.log(studentsArray);
   return studentsArray;
-
 };
 
+// Trabajar con la funcion global, para obtener el objeto solicitado
 
 
-
-
-//Trabajar con la funcion global, para obtener el objeto solicitado
-
-/*
- window.computeGenerationsStats = (laboratoria) => {
-    const generationsArray = [];
-    const obj = {
-        campus: '',
-        generation: '',
-        average: '',
-        count: ''
-    };
-
-
-     for (key in laboratoria) {
-
-       //console.log(key);  //muestra las sedes
-       //console.log(laboratoria[key]);  // muestra las generaciones
-       //console.log(laboratoria[key].generacion);  // muestra un objeto con las generaciones por sede
-       //console.log(Object.keys(laboratoria[key].generacion));  //muestra un array con el nombre de las generaciones por sede
-
-       //guardar las keys en una variable
-       let generations = Object.keys(laboratoria[key].generacion);
-       generations.forEach((generation) => {
-         const obj = {
-           campus: key,
-           generation: generation,
-           count: laboratoria[key].generacion[generation].estudiantes.length
-         }
-//console.log(laboratoria[key].generacion[generation].estudiantes.length);
-         //console.log(key);
-
-            generationsArray.push(obj);
-
-          });
-
-//console.log(laboratoria[key].generacion);
-     }
-     console.log(generationsArray);
-     return generationsArray;
+window.computeGenerationsStats = (laboratoria) => {
+  const generationsArray = [];
+  const obj = {
+    campus: '',
+    generation: '',
+    average: '',
+    count: ''
   };
 
-*/
 
+  for (key in laboratoria) {
+    // console.log(key);  // muestra las sedes
+    // console.log(laboratoria[key]); // muestra las generaciones
+    // console.log(laboratoria[key].generacion);  // muestra un objeto con las generaciones por sede
+    // console.log(Object.keys(laboratoria[key].generacion));  //muestra un array con el nombre de las generaciones por sede
+
+    // guardar las keys en una variable
+    let generations = Object.keys(laboratoria[key].generacion);
+    generations.forEach((generation) => {
+      const obj = {
+        campus: key,
+        generation: generation,
+        count: laboratoria[key].generacion[generation].estudiantes.length
+      };
+      // console;.log(laboratoria[key].generacion[generation].estudiantes.length);
+      // console.log(key);
+
+      generationsArray.push(obj);
+    });
+
+    log(laboratoria[key].generacion);
+  }
+  console.log(generationsArray);
+  return generationsArray;
+};
 
 
 //
 // window.sortStudents = () => {
-//
-// };
 //
 //
 // window.filterStudents = () => {
